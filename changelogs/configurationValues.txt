@@ -1,0 +1,7 @@
+# Set these values in CI/CD configuration to connect to an embedded PGSQL database and run example
+
+logLevel: ALL
+changeLogFile: changelog.sql
+url: rgba562s.instances.spawn.cc
+username: lspawn_admin_YOsj
+password: 9eAIP9M7hfz14K1F
