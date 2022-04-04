@@ -1,7 +1,6 @@
 --liquibase formatted sql
 
 --changeset sanjay:1.0.0.0
---rollback DROP TABLE liquitest1;
 create table liquitest1 (
     id int primary key,
     name varchar(50) not null,
@@ -9,9 +8,9 @@ create table liquitest1 (
     address2 varchar(50),
     city varchar(30)
 )
+--rollback DROP TABLE liquitest1;
 
 --changesetsanjay:1.0.0.1
---rollback DROP TABLE liquitest2;
 create table liquitest2 (
     id int primary key,
     name varchar(50) not null,
@@ -19,3 +18,4 @@ create table liquitest2 (
     address2 varchar(50),
     city varchar(30)
 )
+--rollback DROP TABLE liquitest2;
