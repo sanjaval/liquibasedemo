@@ -19,12 +19,12 @@ jobs:
     - name: Run 'Liquibase status' in a Docker Container	    
       uses: docker://liquibase/liquibase:latest
       with:
-        args: --url="rgba562s.instances.spawn.cc/postgres" --classpath=./changelogs/ojdbc8.jar --changeLogFile=./changelogs/changelog.sql --username=spawn_admin_YOsj --password=9eAIP9M7hfz14K1F status --verbose
+        args: --url=jdbc:postgresql://rgba562s.instances.spawn.cc/postgres --classpath=./changelogs/ojdbc8.jar --changeLogFile=./changelogs/changelog.sql --username=spawn_admin_YOsj --password=9eAIP9M7hfz14K1F status --verbose
     
     - name: Run 'Liquibase update' in a Docker Container
       uses: docker://liquibase/liquibase:latest
       with:
-        args: --url="rgba562s.instances.spawn.cc/postgres" --classpath=./changelogs/ojdbc8.jar --changeLogFile=./changelogs/changelog.sql --username=spawn_admin_YOsj --password=9eAIP9M7hfz14K1F --logLevel=debug update
+        args: --url=jdbc:postgresql://rgba562s.instances.spawn.cc/postgres --classpath=./changelogs/ojdbc8.jar --changeLogFile=./changelogs/changelog.sql --username=spawn_admin_YOsj --password=9eAIP9M7hfz14K1F --logLevel=debug update
       env:
           SPAWNCTL_ACCESS_TOKEN: ${{ secrets.LIQUIBASE_ACCESS_TOKEN }}
 
