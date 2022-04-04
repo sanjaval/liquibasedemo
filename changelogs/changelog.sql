@@ -1,21 +1,41 @@
 --liquibase formatted sql
 
---changeset sanjay:1.0.0.0
-create table liquitest1 (
-    id int primary key,
-    name varchar(50) not null,
-    address1 varchar(50),
-    address2 varchar(50),
-    city varchar(30)
+--changeset san:1 labels:example-label context:example-context
+--comment: example comment
+create table testliqway1(
+    ID int not null,
+    NAME varchar(100) not null
 )
---rollback DROP TABLE liquitest1;
+--rollback DROP TABLE testliqway2;
 
---changesetsanjay:1.0.0.1
-create table liquitest2 (
-    id int primary key,
-    name varchar(50) not null,
-    address1 varchar(50),
-    address2 varchar(50),
-    city varchar(30)
+--changeset san:2 labels:example-label context:example-context
+--comment: example comment
+create table testliqway2(
+    ID int not null,
+    NAME varchar(100) not null
 )
---rollback DROP TABLE liquitest2;
+--rollback DROP TABLE testliqway2;
+
+--changeset san:3 labels:example-label context:example-context
+--comment: example comment
+create table testliqway3(
+    ID int not null,
+    NAME varchar(100) not null
+)
+--rollback DROP TABLE testliqway3;
+
+--changeset san:4 labels:example-label context:example-context
+--comment: example comment
+create table testliqway4(
+    ID int not null,
+    NAME varchar(100) not null
+);
+
+create table testliqway5(
+    ID int not null,
+    NAME varchar(100) not null
+);
+--rollback DROP TABLE 
+--rollback testliqway4;
+--rollback DROP TABLE testliqway5
+
